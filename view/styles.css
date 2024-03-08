@@ -1,0 +1,40 @@
+//for report
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.expenses {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.expense-item {
+    margin-bottom: 10px;
+}
+
+.expense-item span {
+    display: inline-block;
+    width: 100px;
+}
+

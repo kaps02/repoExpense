@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        .pagination {
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <button id="buy-button" class="btn btn-success float-right">Buy Premium</button>  
+                <h1>Expense Tracker</h1>
+                <div >
+                    <div id="message" ></div>
+                    <div id="leaderboard" ></div>
+                </div>
+                <form id="expenseForm">
+                    <div id="show-premium"></div>
+                    <div class="form-group">
+                        <label for="category">Category:
+                            <select id="dropdown" name="category">
+                                <option value="food">Food</option>
+                                <option value="salary">Salary</option>
+                                <option value="petrol">Petrol</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="amount" id="amount" name="amount" class="form-control" required>
+                    </div>
+                    <button type="submit" id="addButton" class="btn btn-primary">Add Expense</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <!-- Add input field for setting the number of expenses per page -->
+                <label for="expensesPerPage">Expenses Per Page:</label>
+                <input type="number" id="expensesPerPage" min="2" max="10" step="1">
+
+                <table class="table table-striped table-bordered" id="expenseTable">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseTableBody">
+                        <!-- Data will be dynamically added here using JavaScript -->
+                    </tbody>
+                    
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                <strong>Total:</strong>
+                            </td>
+                            <strong><td id="totalExpense"></td></strong>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="pagination" id="pagination"></div>
+                <button id="downloadexpense" onclick="download()">Download</button>  
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js"></script>
+    <script src="/expense.js"></script>
+</body>
+</html>
